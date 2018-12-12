@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name"                : "togroup-app-service",
+      "script"              : "server.js",
+      "watch"               : ["config.json", "server.js"],
+      "ignore_watch"        : ["log", "pid"],
+      "instances"           : 1,
+      "exec_mode"           : "cluster_mode",
+      "env"                 : {
+        "NODE_ENV"          : "production"
+      },
+      "error_file"          : "log/togroup-app-service.stderr.log",
+      "out_file"            : "log/togroup-app-service.stdout.log",
+      "pid_file"            : "pid/togroup-app-service.pid",
+      "max_memory_restart"  : "1G",
+      "merge_logs"          : true,
+      "max_restarts"        : 30
+    }
+  ]
+}

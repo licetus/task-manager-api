@@ -1,0 +1,88 @@
+{
+	"name": "shirong app service",
+	"swagger": {
+		"host": "47.104.182.127",
+		"schemes": ["http"]
+	},
+	"server": {
+		"port": 80
+	},
+	"thirdParty": {
+		"aliDayu": {
+			"appKey": "LTAIOeeJwFfesfgR",
+			"appSecret": "M1B7WIc53YyoGGSii61isVLUcP2N8j",
+			"signName": "AEROLINK",
+			"templateCode": "SMS_111895318"
+		},
+		"teleSign": {
+			"customerId": "163A0C37-0354-4293-A6BB-5A2DF8D32DA5",
+			"apiKey": "fRDf0omZp3veuoSJ6G7W2SnHaT0DjH1x8B6NXSBXAxaGJS8aTKO3zjKb9FE3H7GS5D4K48VLr/9tDtEfU2Q1cw==",
+			"endPoint": "https://rest-api.telesign.com"
+		},
+		"gmail": {
+			"host": "smtp.gmail.com",
+			"port": 465,
+			"secure": true,
+			"auth": {
+				"user": "test@aerolink.me",
+				"pass": "9b%gRLYd"
+			},
+			"from": "test@aerolink.me"
+		},
+		"qq": {
+			"host": "smtp.qq.com",
+			"port": 465,
+			"secure": true,
+			"auth": {
+				"user": "bm776688@qq.com",
+				"pass": "qyguzsiikguwcbeg"
+			},
+			"from": "bm776688@qq.com"
+		},
+		"forecast": {
+			"key": "e3750c15b1a7457b8db11613163007"
+		},
+		"amap": {
+			"key": "08ae7369893f0ce589273c1b238d5883"
+		},
+		"googleMap": {
+			"key": "AIzaSyDrTZ3GfxMgMFNEV4Ma-gX52maEV4GF34s"
+		}
+	},
+	"database": {
+		"postgres": {
+			"shirong": {
+				"host": "47.104.182.127",
+				"db": "shirong",
+				"port": 5432,
+				"credentials": {
+					"username": "postgres",
+					"password": "shirongfinance"
+				}
+			}
+		}
+	},
+	"jwtOptions": {
+		"expiresIn": "180d"
+	},
+	"secret": {
+		"jwt": "RWxhaW5lLCBJIGxvdmUgeW91fg==",
+		"cookie": "1dy-7C6-a4H-eEa",
+		"hash": "Fc5-vhT-zG5-7vh"
+	},
+	"pay": {
+		"wechat": {
+			"appid": "",
+			"appsecret": "",
+			"partnerid": "",
+			"signkey": "",
+			"redirect": ""
+		},
+		"ali": {
+			"partnerid": "",
+			"appid": "",
+			"sellerid": "",
+			"redirect":	""
+		}
+	}
+}

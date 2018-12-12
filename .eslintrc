@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "globals": {
+    "__DEV__": true
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "no-confusing-arrow": 0,
+    "no-plusplus": 0,
+    "indent": ["error", "tab"],
+    "no-tabs": ["off"],
+    "semi": [2, "never"],
+    "max-len": ["off"],
+    "global-require": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "object-property-newline": 0,"no-mixed-operators": [
+        "error",
+        {
+            "groups": [
+                ["*", "/", "%", "**"],
+                ["&", "|", "^", "~", "<<", ">>", ">>>"],
+                ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+                ["&&", "||"],
+                ["in", "instanceof"]
+            ],
+            "allowSamePrecedence": true
+        }
+    ],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js"]}]
+  }
+}

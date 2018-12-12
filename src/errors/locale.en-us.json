@@ -1,0 +1,12 @@
+{
+	"NotAuthorize":				"Authorization failed",
+	"NotAuthenticate":		"Authentication failed",
+	"InvalidVerifyCode":	"Invalid verify code",
+	"MobileNumberInvalid":	"Pilot accout should be a valid mobile number",
+	"EmailInvalid": 			"Invalid email",
+	"AccountExist": "This account already exists",
+	"NoFileFound": "No file found in upload request",
+	"SaveFileFailed": "Save file failed",
+	"FileSizeExtendLimit": "Upload file is too large",
+	"Duration": "Order end time should be larger than start time"
+}

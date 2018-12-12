@@ -1,0 +1,79 @@
+{
+	"name": "togroup app service",
+	"swagger": {
+		"host": "localhost",
+		"schemes": ["http"]
+	},
+	"server": {
+		"port": 10002
+	},
+	"thirdParty": {
+		"aliDayu": {
+			"appKey": "****",
+			"appSecret": "***",
+			"signName": "ToGroup",
+			"templateCode": "SMS_10610196"
+		},
+		"smtp": {
+			"connectionString": "smtps://activate%40astrongtech.com:password@smtp.exmail.qq.com",
+			"from": "activate@astrongtech.com"
+		},
+		"qiniu": {
+			"accessKey": "",
+			"secretKey": "",
+			"bucket": "togroup",
+			"domain": "o8ponygb0.bkt.clouddn.com",
+			"callbackUrl": "http://101.201.108.202/api/v0/uploadCallback"
+		},
+		"forecast": {
+			"key": "e3750c15b1a7457b8db11613163007"
+		},
+		"amap": {
+			"key": "08ae7369893f0ce589273c1b238d5883"
+		}
+	},
+	"database": {
+		"postgres": {
+			"togroup": {
+				"host": "localhost",
+				"db": "togroup-test",
+				"port": 5432,
+				"credentials": {
+					"username": "postgres"
+				},
+				"default": true
+			},
+			"postgres": {
+				"db": "postgres",
+				"host": "localhost",
+				"port": 5432,
+				"credentials": {
+					"username": "postgres"
+				}
+			}
+		}
+	},
+	"jwtOptions": {
+		"expiresIn": "180d"
+	},
+	"secret": {
+		"jwt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+		"cookie": "1dy-7C6-a4H-eEa",
+		"hash": "Fc5-vhT-zG5-7vh"
+	},
+	"pay": {
+		"wechat": {
+			"appid": "",
+			"appsecret": "",
+			"partnerid": "",
+			"signkey": "",
+			"redirect": ""
+		},
+		"ali": {
+			"partnerid": "",
+			"appid": "",
+			"sellerid": "",
+			"redirect":	""
+		}
+	}
+}

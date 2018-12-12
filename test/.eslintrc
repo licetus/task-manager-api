@@ -1,0 +1,14 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "should": true,
+    "testCx": true,
+  },
+  "rules": {
+    "no-unused-expressions": 0,
+    "padded-blocks": 0,
+    "no-underscore-dangle": 0
+  }
+}

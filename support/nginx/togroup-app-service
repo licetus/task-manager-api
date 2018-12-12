@@ -1,0 +1,94 @@
+upstream togroup_app_service {
+  server localhost:30020;
+}
+
+upstream togroup_web_service {
+  server localhost:3008;
+}
+
+server {
+  listen 80;
+#  listen 443 ssl;
+#  listen [::]:443 ssl;
+
+#  server_name togroup.com;
+
+#  location / {
+#    root /home/togroup/togroup-app-service;
+#    index index.html;
+#  }
+
+  # togroup-app-service server
+  location /api {
+#    if ($scheme = http) {
+#      return 301 https://$http_host$request_uri;
+#    }
+
+#    error_page 497 =301 https://$http_host$request_uri;
+
+    access_log  off;
+    # access_log  /var/log/nginx/togroup_app_service_access.log;
+    error_log   /var/log/nginx/togroup_app_service_error.log;
+
+    proxy_redirect     off;
+    proxy_buffering    off;
+
+    proxy_set_header   X-Forwarded-Proto $scheme;
+    proxy_set_header   Host              $http_host;
+    proxy_set_header   X-Real-IP         $remote_addr;
+
+    proxy_pass http://togroup_app_service;
+  }
+
+  location /docs {
+    access_log  off;
+    error_log   off;
+
+    proxy_redirect     off;
+    proxy_buffering    off;
+
+    proxy_set_header   X-Forwarded-Proto $scheme;
+    proxy_set_header   Host              $http_host;
+    proxy_set_header   X-Real-IP         $remote_addr;
+
+    proxy_pass http://togroup_app_service;
+  }
+
+  location /events {
+    access_log  off;
+    # access_log  /var/log/nginx/togroup_web_service_access.log;
+    error_log   /var/log/nginx/togroup_web_service_error.log;
+
+    proxy_redirect     off;
+    proxy_buffering    off;
+
+    proxy_set_header   X-Forwarded-Proto $scheme;
+    proxy_set_header   Host              $http_host;
+    proxy_set_header   X-Real-IP         $remote_addr;
+
+    proxy_pass http://togroup_web_service;
+  }
+
+  location /static {
+    access_log  off;
+    # access_log  /var/log/nginx/togroup_web_service_access.log;
+    error_log   /var/log/nginx/togroup_web_service_error.log;
+
+    proxy_redirect     off;
+    proxy_buffering    off;
+
+    proxy_set_header   X-Forwarded-Proto $scheme;
+    proxy_set_header   Host              $http_host;
+    proxy_set_header   X-Real-IP         $remote_addr;
+
+    proxy_pass http://togroup_web_service;
+  }
+
+#  ssl_certificate       togroup_com.crt;
+#  ssl_certificate_key   togroup_com.key;
+
+#  ssl_session_cache     shared:SSL:10m;
+#  ssl_session_timeout   10m;
+
+#  ssl_protocols         TLSv1 TLSv1.1 TLSv1.2;
+}
