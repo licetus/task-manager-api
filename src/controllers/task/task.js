@@ -1,5 +1,7 @@
-import errors from '../../errors'
+// import errors from '../../errors'
+import * as HSC from '../../static/httpStatusCode'
 import { generateListParams } from '../../utils'
+
 
 export const createTask = async (req, res) => {
 	const { Task } = global.models
@@ -14,7 +16,7 @@ export const deleteTask = async (req, res) => {
 	const id = req.swagger.params.id.value
 	global.logger.trace('deleteTask', id)
 	await new Task().delete(id)
-	return res.sendStatus(204)
+	return res.sendStatus(HSC.NoContent)
 }
 
 export const updateTask = async (req, res) => {
@@ -23,5 +25,25 @@ export const updateTask = async (req, res) => {
 	const id = req.swagger.params.id.value
 	global.logger.trace('updateTask', data, id)
 	await new Task(data).update()
-	return res.sendStatus(204)
+	return res.sendStatus(HSC.NoContent)
+}
+
+export const getTask = async (req, res) => {
+	const { Task } = global.models
+	const id = req.swagger.params.id.value
+	global.logger.trace('getTask', id)
+	const item = await new Task().get(id)
+	return res.json(item)
+}
+
+export const getTaskList = async (req, res) => {
+	const { Task } = global.models
+	const params = generateListParams(req)
+	global.logger.trace('getTaskList', params)
+	const items = await new Task().getList(params)
+	const total = await new Task().getListCount(params)
+	return res.json({
+		total,
+		items,
+	})
 }
