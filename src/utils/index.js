@@ -92,7 +92,13 @@ export const readSwaggerParams = (req, fields) =>
 
 
 export const generateListParams = (req) => {
-	const { orderBy, page, next, pagesize, filters } = req.query
+	const {
+		orderBy,
+		page,
+		next,
+		pagesize,
+		filters,
+	} = req.query
 	const ret = {}
 	if (orderBy) ret.orderBy = orderBy
 	if (page || page === 0) ret.page = page
