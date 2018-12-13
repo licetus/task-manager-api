@@ -1,5 +1,5 @@
 // import errors from '../../errors'
-import * as HSC from '../../static/httpStatusCode'
+import code from '../../static/httpStatusCode'
 import { generateListParams } from '../../utils'
 
 
@@ -16,7 +16,7 @@ export const deleteTask = async (req, res) => {
 	const id = req.swagger.params.id.value
 	global.logger.trace('deleteTask', id)
 	await new Task().delete(id)
-	return res.sendStatus(HSC.NoContent)
+	return res.sendStatus(code.NoContent)
 }
 
 export const updateTask = async (req, res) => {
@@ -25,7 +25,7 @@ export const updateTask = async (req, res) => {
 	const id = req.swagger.params.id.value
 	global.logger.trace('updateTask', data, id)
 	await new Task(data).update()
-	return res.sendStatus(HSC.NoContent)
+	return res.sendStatus(code.NoContent)
 }
 
 export const getTask = async (req, res) => {

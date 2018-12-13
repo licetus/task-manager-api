@@ -1,4 +1,4 @@
-export default {
+const code = {
 	Continue: 100,
 	SwitchingProtocol: 101,
 	Processing: 102,
@@ -16,3 +16,5 @@ export default {
 	NotImplemented: 501,
 	BadGateway: 502,
 }
+
+export default code
