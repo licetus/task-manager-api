@@ -7,6 +7,7 @@ import uploadToken from './uploadToken'
 
 import * as media from './media'
 import doc from './document'
+import task from './task'
 
 const definitions = {
 	error,
@@ -18,6 +19,7 @@ const definitions = {
 
 	...media,
 	...doc,
+	...task,
 
 }
 

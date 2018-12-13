@@ -1,10 +1,12 @@
 import isPromise from 'is-promise'
 import doc from './document'
 import media from './media'
+import task from './task'
 
 const controllers = {
 	...doc,
 	...media,
+	...task,
 }
 
 // this exported controllers is for swatter-tools, but it cannot deal with exception in async

@@ -14,7 +14,6 @@
   "dependencies": {
     "alidayu-node": "^1.0.3",
     "axios": "^0.17.1",
-    "task-manager-model": "file:../task-manager-model",
     "body-parser": "1.15.2",
     "cookie-parser": "1.4.3",
     "core-js": "2.4.1",
@@ -44,6 +43,7 @@
     "swagger-tools": "^0.10.1",
     "swagger-ui": "git+https://github.com/swagger-api/swagger-ui.git#5e4cd0d33566c9e5ebaf3e7c6e32d33ba14813c2",
     "taobao-sdk": "git+https://github.com/mongris/taobao-sdk.git",
+    "task-manager-model": "file:../task-manager-model",
     "telesignsdk": "^2.0.2",
     "unique-filename": "^1.1.0",
     "xml2js": "0.4.17"
