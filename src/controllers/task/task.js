@@ -23,8 +23,9 @@ export const updateTask = async (req, res) => {
 	const { Task } = global.models
 	const data = req.body
 	const id = req.swagger.params.id.value
+	data.id = id
 	global.logger.trace('updateTask', data, id)
-	await new Task(data).update()
+	await new Task(data).save()
 	return res.sendStatus(code.NoContent)
 }
 
